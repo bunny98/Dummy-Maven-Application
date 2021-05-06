@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+                <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
+                <timestampFormatTimezoneId>Etc/UTC</timestampFormatTimezoneId>
+
+                <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+                    <prettyPrint>false</prettyPrint>
+                </jsonFormatter>
+                <appendLineSeparator>true</appendLineSeparator>
+            </layout>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
